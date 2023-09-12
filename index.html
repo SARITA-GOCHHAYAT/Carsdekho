@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars Dekho</title>
+    <script src="https://kit.fontawesome.com/9d25914ace.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
        <div id="logo">
-        <img src="./image/logo.jpg" alt="">
+        <img src="./image/logo.jpg" alt="" href="#option">
     </div> 
 
         <div id="option">
             <span class="material-symbols-outlined" id="close">
                 close
                 </span>
-            <a href=""><p>Home</p></a>
-            <a href=""><p>Gallery</p></a>
-            <a href=""><p>Services</p></a>
-            <a href=""><p>Form</p></a>
-            <a href=""><p>Contact us</p></a>
+            <a href="#option" id="ho"><p>Home</p></a>
+            <a href="#frontimage"><p>Gallery</p></a>
+            <a href="#servicediv"><p>Services</p></a>
+            <a href="#form"><p>Form</p></a>
+            <a href="#footer"><p>Contact us</p></a>
             <a href=""><p>Admin</p></a>
         </div>
         <span class="material-symbols-outlined" id="menuicon">
@@ -95,6 +96,31 @@
                 </div>
             </div>
         </div>
+        </div>
+        <div id="form">
+            <h1>Form</h1>
+            <form action="">
+                <label for="">Name</label><br>
+                <input type="text" placeholder="Name"><br>
+                <label for="">Phone No</label><br>
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-3452-987"><br>
+                <label for="">Email</label><br>
+                <input type="email" placeholder="abc@gmail.com"><br>
+                <label for="">Select Cars</label><br>
+                <input type="checkbox" name="Hatchback" class="inpcheck">Hatchback
+                <input type="checkbox" name="Sadan" class="inpcheck">Sadan
+                <input type="checkbox" name="SUV" class="inpcheck">SUV<br>
+                <label for="">Adress</label><br>
+<textarea name="" id="" cols="30" rows="5"></textarea>
+<br>
+<button>Submit</button>            
+</form>
+        </div>
+        <div id="footer">
+            <h1>Contact Us</h1>
+            <p>Phone No:1234567890</p>
+            <p>Email:abd@gmail.com</p>
+            <div id="icondiv"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-whatsapp"></i><i class="fa-brands fa-twitter"></i></div>
         </div>
 </body>
 </html>

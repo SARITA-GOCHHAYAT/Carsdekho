@@ -16,7 +16,12 @@ closed.addEventListener("click",function(){
     wrapper.style.display="none";
 })
 
-
+let logo=document.getElementById("logo");
+let home=document.getElementById("ho");
+let nav=document.getElementsByTagName("nav");
+function logoho(){
+window.location.href=""
+}
 
 
 
