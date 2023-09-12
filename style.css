@@ -4,18 +4,14 @@
     margin:0; 
     padding:0;
 }
-body{
-   
-    background-color: aqua;
-}
 nav{
     height: auto;
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: rgb(243, 240, 240);
-    position: sticky;
-    /* background-color: red; */
-    margin-right: none;
+    position: fixed;
+    top: 0;
+    overflow:hidden;
 }
 #logo{
 width: 70px;
@@ -23,7 +19,6 @@ height: 70px;
 border-radius: 5.5rem;
 margin: 0.2rem 0.4rem;
 margin-left: 4%;
-/* background-color: red; */
 align-items: center; 
 }
 #ting{
@@ -39,21 +34,20 @@ nav,#option{
     display: flex;
     text-align: center;
     align-items: center;
+    justify-content: space-between;
+   
 }
-.material-symbols-outlined{
+#close{
+    margin-top: 10px;
+    display: none;
+}
+#menuicon{
     display: none;
 }
 #option{
-    display: flex;
-    width: 60%;
+    width: 50%;
     height: 100%;
-    justify-content: space-around;
-    margin-left:30%; 
-}
-.wrapper{
-    /* background-color: red; */
-    padding-top: 15px;
-    display: none;
+    margin-right:3%; 
 }
 .menu{
     list-style: none;
@@ -61,8 +55,6 @@ nav,#option{
    flex-direction: column;
     font-weight: bold;
     gap: 10px;
-
-    /* display: none; */
 }
 .menu a{
     text-decoration: none;
@@ -73,20 +65,19 @@ nav,#option{
     color:black;
     font-weight: bold;
 }
-.wrapper a:hover,#option a:hover{
+#option a:hover{
     color: blue;
     border-bottom: 4px solid blue;
 }
 #frontimage{
     display: flex;
-    /* background-color: blue; */
     width: 100%;
     height: 20rem;
     margin-right: none;
+    margin-top: 80px;
 }
 
 #frontimage1{
-    /* background-color: red; */
     width: 40%;
 font-size: 3.2rem;
 position: relative;
@@ -101,6 +92,47 @@ color: blue;
 opacity: 0;
 animation: reveal .5s forwards var(--delay);
 }
+#carimagesec{
+    width:100%;
+    display: flex;
+    /* background-color: blueviolet; */
+}
+#middivbox{
+    display: flex;
+    width: 100%;
+}
+/* marquee{
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; }*/
+#imageslidep{
+    width: 40%;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+#imageslidep p{
+  font-size: 2rem;
+  margin-top: 30%;
+  margin-left: 10%;
+}
+#middivbox div{
+  height: 300px;  
+  width: 400px;
+ margin-right: 3%;
+}
+#middivbox div img{
+    height: 70%;  
+    width: 100%;
+  }
+  #pick{
+    color: green;
+    font-weight: bold;
+  }
+  #servicediv{
+    text-align: center;
+  }
+  #servicediv p{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: rgb(5, 33, 5);
+  }
 @keyframes reveal{
     from {translate:0 20px;
     }
@@ -115,6 +147,9 @@ animation: reveal .5s forwards var(--delay);
     width: 100%;
     animation: reveal1 .5s backwards var(--delay);
 }
+.optionicon{
+    display: none;
+}
 @keyframes reveal1{
     from {translate:0 20px;
     }
@@ -122,69 +157,112 @@ animation: reveal .5s forwards var(--delay);
         opacity:1;
     }
 }
-
-@media only screen and (max-width: 1080px) {
-    *{
-        font-family: 'Poppins', sans-serif;
-        margin:0; 
-        padding:0;
-    }
-    nav{
-        justify-content: space-between;
-    }
-    #option{
-        display: none;
-        margin-right: 3%;
-    }
-    .wrapper{
-        display: none;
-        margin-right: 50%;
-    }
-    #frontimage{
-        /* flex-wrap: wrap; */
-        height: auto;
-        align-items: center;
-        /* text-align: center; */
-        background-color: blueviolet;
-    }
-    #frontimage1 {
-        width: 40%;
-        background-color: blue;
-    }
-    #frontimage1 p{
-        font-size: 2rem;
-        margin-left: 7%;
-    }
-    
-    #frontimage2{
-        background-color: red; 
-    }
-    #frontimage2 img{
-        margin-right: 7%;
-    }
-    .material-symbols-outlined{
-        display: block;
-        margin-right: 3%;
-    }
+#servicediv{
+    height: 500px;
 }
-@media only screen and (max-width: 800px) {
-.material-symbols-outlined{
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+  }
+  .container .box {
+    position: relative;
+    width: 25%;
+    height:200px ;
+    margin: 1rem;
+  }
+  
+  .container .box:hover .imgBox {
+    transform: translate(-1.5rem, -1.5rem);
+  }
+  
+  .container .box:hover .content {
+    transform: translate(1.5rem, 1.5rem);
+  }
+  
+  .imgBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    resize: both;
+  }
+  
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(148, 241, 148);
+    z-index: 1;
+    align-items: flex-end;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .content h2 {
+    display: block;
+    font-size: 1rem;
+    color: #111;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .content span {
+    color:rgb(206, 21, 33);
+    font-size: 0.6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+
+@media only screen and (max-width: 900px) {
+#menuicon{
         display: block;
-        margin-right: 3%;
+        margin-right: 10%;
     }
     #option{
         display: none;
     }
     #frontimage1 p{
-        font-size: 1rem;
-        margin-left: 7%;
+        font-size: 1.5rem;
+        margin-left: 9%;
+        margin-top: 5%;
     }
      #frontimage2 {
         width: 60%;
-        /* background-color: blueviolet;  */
     }
     #frontimage2 img{
         margin-right: 7%;
         width: 90%;
     }
+    #close{
+        display: block;
+    }
+.container{
+    flex-wrap: wrap;
+}
+    .container .box:hover .content {
+        transform: translate(0, 3.5rem);
+      }
+      .container .box:hover .imgBox {
+        transform: translate(0, -3.5rem);
+      }
 }
